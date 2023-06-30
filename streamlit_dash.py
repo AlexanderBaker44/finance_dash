@@ -25,7 +25,7 @@ with col1:
     filtered_df_finance.groupby('year').sum()[seq_list].plot(kind='line',ylabel = 'USD ($)')
     st.pyplot()
     st.write('Overall FInancials')
-    filtered_df_year_and_comp.groupby('company').sum().plot(kind='bar', title = f'Finance Data for Years: {year[0]} through {year[1]}', ylabel = 'USD ($)')
+    filtered_df_year_and_comp.groupby('company').sum().drop('year',axis=1).plot(kind='bar', title = f'Finance Data for Years: {year[0]} through {year[1]}', ylabel = 'USD ($)')
     st.pyplot()
 
 with col2:
